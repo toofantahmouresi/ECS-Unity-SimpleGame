@@ -13,6 +13,7 @@ public class MovableSystem : SystemBase
         Entities.ForEach((ref Movable mov, ref Translation translation, ref Rotation rot) =>
         {
             translation.Value += mov.speed * mov.direction* dt;
+            rot.Value = math.mul(rot.Value.value, quaternion.RotateY(mov.speed * dt)); 
         }).Schedule();
     }
 }
