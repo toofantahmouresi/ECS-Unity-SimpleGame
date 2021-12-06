@@ -59,7 +59,8 @@ public class EnemySystem : SystemBase
 
         public bool CheckRay(float3 pos, float3 direction, float3 currentDirection)
         {
-
+            if (direction.Equals(-currentDirection)) return true; // for enemy traveling only in forward direction!
+            
             if (direction.Equals(-currentDirection))
                 return true;
 
